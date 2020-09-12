@@ -11,7 +11,7 @@ pipeline {
                 sh 'npm install' 
             }
         }
-        stage('Lint')
+        stage('Lint') {
             steps {
                 sh 'npm run lint'
                 sh 'npm run lint:config -- -f ./config/7ms.yml'
@@ -27,5 +27,6 @@ pipeline {
                 sh 'npm run lint:config -- -f ./config/tutorial.yml'
                 sh 'npm run lint:config -- -f ./config/unsafe.yml'
             }
+        }
     }
 }
